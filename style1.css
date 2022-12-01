@@ -1,0 +1,213 @@
+body {
+  display: flex;
+  min-width: 250px;
+  flex-direction: column;
+  background-image: url(https://ru-wotp.wgcdn.co/dcont/fb/image/hall_without_cal_1920_1080.jpg);
+  font-family: monospace;
+  font-size: 1.15em;
+}
+header {
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
+header > section {
+  flex-grow: 1; /*Растягивает на всю ширину*/
+  text-align: center;
+}
+footer {
+  flex-direction: column;
+  margin: 0px 3px;
+  color: white
+}
+footer > p {
+  margin: 7px;
+  float: right;
+  color: white
+}
+footer > h4 {
+  color: white;
+  margin: 5px;
+}
+figure > img {
+  width: 100%;
+  object-fit: contain;
+  background-color: black;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  min-width: 500px;
+}
+
+figure {
+  float: left;
+  margin: 10px;
+  width: 7em;
+  height: 7em;
+  border: solid 2px white;
+  color: white;
+  background-color: black;
+  display: flex;
+  flex-shrink: 0;
+}
+section > h3 {
+  margin: 10px;
+  padding-left: 15px;
+}
+section > p {
+  margin: 10px;
+}
+article > h2 {
+  text-align: left;
+  padding-left: 20px;
+}
+.top {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid white;
+  padding: 5px;
+  margin: 3px;
+  color: white;
+}
+div > section {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid white;
+  padding: 5px;
+  height: 200px;
+  margin: 3px;
+}
+nav {
+  display: flex;
+  padding: 5px;
+  flex-direction: row;
+  flex-wrap: nowrap; /*Перенос блоков при уменьшении окна*/
+}
+li {
+  padding: 0;
+}
+/*Прозрачность*/
+#menu__toggle {
+  opacity: 0;
+}
+div>a {
+  text-decoration: none;
+  color: #61f;
+}
+div>a:hover {
+  background-color: #e5f4ff;
+}
+/*тлф*/
+@media screen and (max-width: 600px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0px;
+  }
+  /*
+   При клике на label открывается чекбокс
+  */
+  #deskMenu>div {
+		display: none;
+	}
+	#mobile_menu {
+	  display: block;
+	}
+	.menu__item {
+	        display: block;
+          margin-bottom: -50px;
+	        padding: 5px 5px;
+	        color: #303;
+          color: white;
+          background-color: red;
+	        font-weight: 500;
+	        text-decoration: none;
+          text-overflow: ellipsis;
+          font-family: 'Roboto', sans-serif;
+          font-size: 20px;
+	}
+
+
+	#menu__box {
+	        display: block;
+	        position: relative;
+	        visibility: hidden;
+	        width: 400px;
+          height: auto;
+	        list-style: none;
+	        text-align: center;
+          background-color: black;
+	        box-shadow: 10px 10px 5px green;
+          padding: 0px 15px;
+          transition-duration: .25s;
+	}
+	#menu__btn>span,
+	#menu__btn>span::before,
+	#menu__btn>span::after {
+            display: block;
+	    	position: relative;
+	    	width: 100%;
+	    	height: 2px;
+        background-color: #616161;
+        transition-duration: .25s;
+	}
+	#menu__btn>span::before {
+	        content: '';
+	        top: -8px;
+	}
+	#menu__btn>span::after {
+	     	content: '';
+	        top: 6px;
+	}
+	#menu__btn {
+	        display: flex;
+			position: relative;
+			height: 40px;
+			width: 40px;
+	}
+	#menu__toggle:checked~#menu__btn>span {
+			transform: rotate(45deg);
+	}
+	#menu__toggle:checked~#menu__btn>span::before {
+	        top: 0;
+			transform: rotate(0deg);
+	}
+	#menu__toggle:checked~#menu__btn>span::after {
+	        top: 0;
+	        transform: rotate(90deg);
+	}
+	#menu__toggle:checked~#menu__box {
+	        visibility: visible;
+	        left: 0;
+	}
+}
+
+/*монитор*/
+@media screen and (min-width: 600px) {
+  figure {
+    width: auto;
+  }
+  #mobile_menu {
+		display: none;
+	}
+	#deskMenu {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr;
+
+	}
+	#deskMenu>div {
+		text-align: center;
+		border: solid 2px white;
+		border-radius: 10px;
+		margin-right: 3px;
+		margin-left: 3px;
+		padding: 5px;
+	}
+	#deskMenu>div>h4 {
+		margin: 0px;
+
+	}
+}
